@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klug AI Image Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'brand-purple': '#8B5CF6',
+              'brand-blue': '#3B82F6',
+              'slate': {
+                '800': '#1E293B',
+                '700': '#334155',
+                '900': '#0F172A',
+              }
+            },
+            boxShadow: {
+              'glow': '0 0 20px rgba(139, 92, 246, 0.6)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #F1F5F9; /* bg-slate-100 */
+      }
+      .dark body {
+        background-color: #0F172A; /* bg-slate-900 */
+      }
+      
+      @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.6); }
+        50% { box-shadow: 0 0 35px rgba(139, 92, 246, 0.9); }
+      }
+      .pulse-glow {
+        animation: pulse 2.5s ease-in-out infinite;
+      }
+      
+      /* Custom Scrollbar for a native feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #e2e8f0; /* slate-200 */
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #1E293B; /* slate-800 */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #94a3b8; /* slate-400 */
+        border-radius: 4px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #475569; /* slate-600 */
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748B; /* slate-500 */
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #64748B; /* slate-500 */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.24.0"
+  }
+}
+</script>
+</head>
+  <body class="text-slate-800 dark:text-white font-sans">
+    <div id="root"></div>
+  </body>
+</html>
